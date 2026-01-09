@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>TechStore - 2026</title>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="location.reload()">
+            <i class="fa-solid fa-bolt"></i>
+            <h1>TechStore</h1>
+        </div>
+        <div class="search-container">
+            <input placeholder="Buscar produtos..." class="search-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <div class="categories-container">
+        <nav class="categories-bar">
+            <button class="category-btn active" data-category="all"><i class="fa-solid fa-border-all"></i> Todos</button>
+            <button class="category-btn" data-category="smartphones"><i class="fa-solid fa-mobile-retro"></i> Smartphones</button>
+            <button class="category-btn" data-category="laptops"><i class="fa-solid fa-laptop"></i> Notebooks</button>
+            <button class="category-btn" data-category="headphones"><i class="fa-solid fa-headphones"></i> Fones</button>
+            <button class="category-btn" data-category="accessories"><i class="fa-regular fa-keyboard"></i> Acessórios</button>
+        </nav>
+    </div>
+
+    <section class="hero-section" data-aos="fade-down">
+        <h2>Black Friday Antecipada!</h2>
+        <p>Até 50% de desconto em produtos selecionados</p>
+    </section>
+
+    <main class="products">
+        <div class="products-container"></div>
+    </main>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Meu Carrinho</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items" class="cart-items-list"></div>
+        <div class="cart-footer">
+            <div class="total-container">
+                <span>Total:</span>
+                <span id="cart-total">R$ 0,00</span>
+            </div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="">
+                <div class="modal-info">
+                    <h2 id="modal-name"></h2>
+                    <p id="modal-desc"></p>
+                    <p id="modal-price"></p>
+                    <div class="modal-actions">
+                        <button id="btn-add-cart" class="buy-btn">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>2026 - TechStore. Todos os Direitos Reservados</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
